@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     word-break: keep-all;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
@@ -140,4 +139,5 @@ footer {
 html, body {
   height: 100%;
   overflow-y: hidden;
+
 }
