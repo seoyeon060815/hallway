@@ -90,7 +90,7 @@ footer {
     box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .on-img {
         height: 75vh;
     }
@@ -98,6 +98,23 @@ footer {
     .three-imgs img {
         width: 60px;
         height: 40px;
+    }
+} */
+
+@media (max-width: 600px) {
+    .three-imgs {
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 10px 10px 20px;
+    }
+
+    .img0, .img1, .img2 {
+        width: 100%;
+    }
+
+    .three-imgs img {
+        width: 100%; 
+        height: auto; 
     }
 }
 
@@ -129,4 +146,5 @@ footer {
 
 .img-link:hover::after {
   opacity: 1;
+
 }
