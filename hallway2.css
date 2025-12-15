@@ -90,17 +90,6 @@ footer {
     box-sizing: border-box;
 }
 
-/* @media (max-width: 600px) {
-    .on-img {
-        height: 75vh;
-    }
-
-    .three-imgs img {
-        width: 60px;
-        height: 40px;
-    }
-} */
-
 @media (max-width: 600px) {
     .three-imgs {
         flex-direction: column; 
@@ -148,3 +137,4 @@ footer {
   opacity: 1;
 
 }
+
