@@ -70,6 +70,7 @@ main {
     padding-bottom: 30px; 
     position: relative;
 }
+
 .image-wrap {
     position: relative;
     width: 80%;
@@ -89,14 +90,18 @@ main {
 
 figcaption {
     background-color: rgba(255, 255, 255, 0.7);
-    width: 90%;
-    padding: 1vw 0;      
+    width: 100%;
+    padding: 10px 0;
     text-align: center;
-    font-size: 1.2vw;     
+    font-size: 16px;
     color: #333333;
     line-height: 1.5;
     font-weight: 500;
-    margin-top: -3vh;    
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
 }
 
 footer {
@@ -122,11 +127,19 @@ footer {
         height: 75vh;
     }
 
+    figcaption {
+        font-size: 12px;  
+        padding: 6px 0;   
+        bottom: 15px;     
+    }
+
+
     .three-imgs img {
         width: 60px;
         height: 40px;
     }
 }
+
 
 
 
