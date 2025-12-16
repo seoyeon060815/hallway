@@ -91,7 +91,7 @@ main {
     object-fit: contain;
 }
 
-figcaption {
+/* figcaption {
     background-color: rgba(255, 255, 255, 0.7);
     width: 100%;
     padding: 10px 0;
@@ -104,7 +104,21 @@ figcaption {
     bottom: 20px;
     left: 0;
     right: 0;
+} */
 
+figcaption {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    padding: 1em 0; 
+    text-align: center;
+    font-size: 1em; 
+    color: #333333;
+    line-height: 1.5;
+    font-weight: 500;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
 }
 
 footer {
@@ -135,5 +149,6 @@ footer {
         height: 40px;
     }
 }
+
 
 
