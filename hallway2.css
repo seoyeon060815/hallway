@@ -64,13 +64,16 @@ h1 a {
 
 .img-link {
   position: relative;
-  display: block;
+  display: flex;          
   overflow: hidden;
+  height: 100%;
 }
 
 .img0 img, .img1 img, .img2 img {
   width: 100%;
-  height: calc(100vh - 280px); 
+  height: auto;           
+  flex-grow: 1;           
+  min-height: 0;          
   object-fit: cover;
   display: block;
 }
@@ -124,5 +127,6 @@ footer {
     object-fit: cover;
   }
 }
+
 
 
