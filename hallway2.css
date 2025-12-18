@@ -44,7 +44,9 @@ h1 a {
   align-items: stretch;
 }
 
-.img0, .img1, .img2 {
+.img0,
+.img1,
+.img2 {
   flex: 1;
   max-width: calc(33.333% - 12px);
   display: flex;
@@ -68,11 +70,20 @@ h1 a {
   overflow: hidden;
 }
 
-.img0 img, .img1 img, .img2 img {
+.img0 img,
+.img1 img,
+.img2 img {
   width: 100%;
-  height: 420px;
   object-fit: cover;
   display: block;
+}
+
+@media (min-width: 601px) {
+  .img0 img,
+  .img1 img,
+  .img2 img {
+    height: calc(100vh - 260px);
+  }
 }
 
 .img-link img {
@@ -106,18 +117,21 @@ footer {
 }
 
 @media (max-width: 600px) {
-
-   .three-imgs {
+  .three-imgs {
     flex-direction: column;
     gap: 24px;
     padding: 24px 20px 40px;
   }
 
-  .img0, .img1, .img2 {
+  .img0,
+  .img1,
+  .img2 {
     max-width: 100%;
   }
 
-  .img0 img, .img1 img, .img2 img {
+  .img0 img,
+  .img1 img,
+  .img2 img {
     height: auto;
     aspect-ratio: 3 / 4;
     width: 100%;
