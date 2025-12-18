@@ -120,25 +120,26 @@ footer {
 @media (max-width: 600px) {
   .three-imgs {
     flex-direction: column; 
-    gap: 30px;              
-    padding: 20px 15px;
+    gap: 0;               
+    padding: 0;           
     min-height: auto;      
   }
 
   .img0, .img1, .img2 {
-    width: 100%;            
+    width: 100%;           
     max-width: 100%;
     flex: none;
+    margin-bottom: 40px;   
   }
 
   .img0 img, .img1 img, .img2 img {
-    height: 50vh;          
+    height: 75vh;          
     width: 100%;
     object-fit: cover;     
   }
 
   .label {
     font-size: 1.2em;      
-    padding: 10px 0;
+    padding: 15px 0;       
   }
 }
