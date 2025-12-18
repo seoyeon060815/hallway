@@ -39,40 +39,41 @@ h1 a {
 .three-imgs {
   display: flex;
   justify-content: center;
-  gap: 18px;                 /* 사진 사이 간격 조금 증가 */
-  padding: 20px 20px 40px;   /* 푸터랑 간격 유지 */
+  gap: 18px;
+  padding: 20px 20px 40px;
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
-
-  min-height: calc(100vh - 260px); /* 첫 화면 꽉 채움 */
+  min-height: calc(100vh - 260px);
 }
 
 .img0,
 .img1,
 .img2 {
   width: calc(100% / 3 - 12px);
-  text-align: center;
+  /* text-align: center; 삭제: 왼쪽 정렬이 기본이어야 자식들이 꽉 찹니다 */
+  display: flex;
+  flex-direction: column;
 }
 
 /* 책 / 영화 / 노래 라벨 */
 .label {
-  background-color:#4F4339;
+  background-color: #4F4339;
   color: white;
-  font-size: 1.1em;   /* 글씨 살짝만 줄임 */
-  padding: 6px 0;     /* ⭐ 핵심: 세로 크기만 줄이기 */
-  /* margin: 0; */
+  font-size: 1.1em;
   padding: 6px 0;
-  margin: 0 6px;
+  margin: 0; /* ⭐ 중요: 마진을 0으로 해야 사진 너비와 똑같아집니다 */
+  width: 100%; /* 너비를 꽉 채움 */
+  text-align: center; /* 글자만 가운데로 */
 }
 
-/* 사진 크기: 안 잘리고, 더 큼 */
+/* 사진 크기 설정 */
 .img0 img,
 .img1 img,
 .img2 img {
   width: 100%;
-  height: 65vh;             /* 핵심: 사진 길이만 줄여서 한 화면에 */
-  object-fit: contain;      /* 절대 안 잘림 */
+  height: 65vh;
+  object-fit: contain; /* 사진 비율 유지하면서 안 잘리게 함 */
   display: block;
 }
 
@@ -136,5 +137,6 @@ footer {
     height: auto;
   }
 }
+
 
 
