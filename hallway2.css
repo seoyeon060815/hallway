@@ -1,140 +1,71 @@
 body {
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; 
+    overflow-y: auto; /* 푸터를 보기 위해 세로 스크롤은 유지 */
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
     line-height: 1.7; 
 }
 
-header {
-    text-align: center;
-}
-
-h1 {
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 700;        
-    letter-spacing: 0.005em;
-    text-shadow: 0.25px 0 0 currentColor;
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
-    padding: 12px 0;
-}
-
-h1 a {
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-.on-h {
-    background-color:#6E5A4A;
-    padding:30px 30px;
-    margin: 0;
-    color: white;
-}
-
-.subtitle {
-    font-size: 1em;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    line-height: 1.5;
-}
-
+/* 2. 사진 영역: 이 부분이 핵심입니다 */
 .three-imgs {  
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 20px 10px 40px; 
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-}
-
-.img0, .img1, .img2 {
-    width: calc(100% / 3 - 10px);
-    box-sizing: border-box;
-    background-color: #fff;
-    color: #333;
-    padding-bottom: 5px;
-    position: relative;
-    text-align: center;
-}
-
-.label {
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 700;        
-    letter-spacing: 0.005em;
-    background-color:#4F4339;
-    color: white;
-    font-size: 1.2em;
-    font-weight: normal;
-    padding: 10px 0;
+    padding: 10px; /* 여백을 조금 줄여서 사진 공간 확보 */
+    max-width: 100%; /* 너비를 화면에 맞춤 */
     margin: 0;
+    background-color: #fff;
+    
+    /* [중요] 화면 전체 높이(100vh)에서 헤더 높이만큼을 뺀 나머지를 꽉 채웁니다 */
+    /* 헤더(h1+on-h)의 대략적인 높이를 제외한 수치입니다 */
+    height: calc(100vh - 130px); 
+    box-sizing: border-box;
 }
 
-.img0 img, .img1 img, .img2 img {
+/* 3. 각 이미지 박스 설정 */
+.img0, .img1, .img2 {
+    width: calc(100% / 3);
+    height: 100%; /* 부모(three-imgs) 높이에 맞춤 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 4. 이미지 링크와 실제 이미지 설정 */
+.img-link {
+    flex: 1;      /* 라벨을 제외한 남은 높이를 이미지가 다 차지함 */
     width: 100%;
-    height: auto; 
     display: block;
+    overflow: hidden;
 }
 
+.img-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 사진이 찌그러지지 않게 꽉 채움 */
+    display: block;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
 
+/* 5. 푸터: 평소엔 화면 아래에 숨어있게 됨 */
 footer {
     background-color: #6E5A4A; 
     color: white;
     text-align: right;
     font-size: 0.7em;
-    padding: 10px 20px;
+    padding: 15px 20px;
     width: 100%;
     box-sizing: border-box;
 }
 
+/* 모바일 대응: 모바일은 세로로 길기 때문에 스크롤이 생기는 것이 자연스럽습니다 */
 @media (max-width: 600px) {
     .three-imgs {
+        height: auto; /* 모바일은 화면 제약 없이 흐르게 둠 */
         flex-direction: column; 
-        gap: 15px; 
-        padding: 10px 10px 20px;
     }
-
     .img0, .img1, .img2 {
         width: 100%;
-    }
-
-    .three-imgs img {
-        width: 100%; 
-        height: auto; 
+        height: auto;
     }
 }
-
-.img-link {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.img-link img {
-  width: 100%;
-  display: block;
-  transition: filter 0.4s ease, transform 0.4s ease;
-}
-
-.img-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.35);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.img-link:hover img {
-  filter: blur(2px);
-  transform: scale(1.03);
-}
-
-.img-link:hover::after {
-  opacity: 1;
-
-}
-
