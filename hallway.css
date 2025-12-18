@@ -1,193 +1,54 @@
-b</body>
-
-</html>body {
-
-margin: 0;
-
-font-family: 'Noto Sans KR', sans-serif;
-
-font-weight: 400;
-
-line-height: 1.7;
-
-height: 100%;
-
-word-break: keep-all;
-
+body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    height: 100vh;      /* 화면 높이를 100%로 고정 */
+    overflow: hidden;   /* 넘치는 스크롤 제거 */
+    display: flex;      /* 요소들을 수직으로 배치하기 위함 */
+    flex-direction: column;
+    word-break: keep-all;
 }
 
-
-
-h1 {
-
-font-family: 'Libre Baskerville', serif;
-
-font-weight: 700;
-
-letter-spacing: 0.005em;
-
-text-shadow: 0.25px 0 0 currentColor;
-
-margin: 0;
-
-font-size: 24px;
-
-text-align: center;
-
-padding: 12px 0;
-
-}
-
-
-
+/* 2. 메인 이미지 영역: 74vh 대신 남는 공간을 꽉 채우게 변경 */
 .on-img {
-
-position: relative;
-
-width: 100%;
-
-height: 74vh;
-
-overflow: hidden;
-
+    position: relative;
+    width: 100%;
+    flex: 1;            /* 헤더, 아래이미지, 푸터를 제외한 모든 남은 공간 차지 */
+    min-height: 0;      /* 이미지가 공간보다 커져서 스크롤 생기는 것 방지 */
+    overflow: hidden;
 }
 
-
-
-.main-img {
-
-position: absolute;
-
-top: 0;
-
-left: 0;
-
-width: 100%;
-
-height: 100%;
-
-object-fit: cover;
-
-}
-
-
-
-.caption {
-
-position: absolute;
-
-bottom: 0;
-
-left: 0;
-
-width: 100%;
-
-margin: 0;
-
-padding: 14px;
-
-font-size: 14px;
-
-color: #fff;
-
-background: rgba(0,0,0,0.5);
-
-}
-
-
-
+/* 3. 아래 3개 이미지 영역: 여백을 살짝 줄임 (흰색 배경 사이즈 조절) */
 .three-imgs {
-
-display: flex;
-
-justify-content: center;
-
-gap: 8px;
-
-padding: 14px 0;
-
-
-
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 0;    /* 기존 14px에서 8px로 줄여 흰색 배경 면적 감소 */
 }
 
-
-
-.three-imgs img {
-
-width: 90px;
-
-height: 60px;
-
-
-
-}
-
-
-
-.three-imgs ul {
-
-list-style: none;
-
-padding: 0;
-
-margin: 0;
-
-display: flex;
-
-gap: 8px;
-
-justify-content: center;
-
-}
-
-
-
-.three-imgs li {
-
-display: inline-block;
-
-}
-
-
-
+/* 4. 푸터: 잘리지 않게 고정 */
 footer {
-
-text-align: right;
-
-font-size: 12px;
-
-color: #666666;
-
-padding: 10px 16px;
-
-border-top: 1px solid #eee;
-
+    flex-shrink: 0;     /* 화면이 작아져도 푸터 높이는 유지하여 글씨 보호 */
+    text-align: right;
+    font-size: 12px;
+    color: #666666;
+    padding: 10px 16px;
+    border-top: 1px solid #eee;
 }
 
-
-
+/* 5. 미디어 쿼리 수정 (모바일 대응) */
 @media (max-width: 600px) {
-
-.on-img {
-
-height: 75vh;
-
-}
-
-.caption {
-
-font-size: 12px;
-
-padding: 10px;
-
-}
-
-.three-imgs img {
-
-width: 60px;
-
-height: 40px;
-
-}
-
+    /* 모바일에서도 고정 높이(75vh)를 쓰지 않고 flex 유지 */
+    .on-img {
+        flex: 1;
+    }
+    .caption {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .three-imgs img {
+        width: 60px;
+        height: 40px;
+    }
 }
