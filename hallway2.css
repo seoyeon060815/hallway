@@ -4,10 +4,14 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 400;
     line-height: 1.7;
+    display: flex;
+    flex-direction: column;
 }
 
+/* header */
 header {
     text-align: center;
+    flex-shrink: 0;
 }
 
 h1 {
@@ -17,7 +21,6 @@ h1 {
     text-shadow: 0.25px 0 0 currentColor;
     margin: 0;
     font-size: 24px;
-    text-align: center;
     padding: 12px 0;
 }
 
@@ -33,15 +36,7 @@ h1 a {
     color: white;
 }
 
-.subtitle {
-    font-size: 1em;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    line-height: 1.5;
-}
-
-/* image list */
+/* 이미지 영역 (첫 화면 핵심) */
 .three-imgs {
     display: flex;
     justify-content: center;
@@ -50,6 +45,10 @@ h1 a {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #fff;
+
+    /* 🔥 첫 화면에 맞추기 */
+    max-height: calc(100vh - 190px);
+    flex-shrink: 0;
 }
 
 .img0,
@@ -57,10 +56,6 @@ h1 a {
 .img2 {
     width: calc(100% / 3 - 10px);
     box-sizing: border-box;
-    background-color: #fff;
-    color: #333;
-    padding-bottom: 5px;
-    position: relative;
     text-align: center;
 }
 
@@ -74,43 +69,16 @@ h1 a {
     margin: 0;
 }
 
+/* 이미지 */
 .img0 img,
 .img1 img,
 .img2 img {
     width: 100%;
-    height: auto;
+    height: auto;   /* ❗ 안 잘림 */
     display: block;
 }
 
-footer {
-    background-color: #6E5A4A;
-    color: white;
-    text-align: right;
-    font-size: 0.7em;
-    padding: 10px 20px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-    .three-imgs {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px 10px 20px;
-    }
-
-    .img0,
-    .img1,
-    .img2 {
-        width: 100%;
-    }
-
-    .three-imgs img {
-        width: 100%;
-        height: auto;
-    }
-}
-
+/* hover 효과 */
 .img-link {
     position: relative;
     display: block;
@@ -118,8 +86,6 @@ footer {
 }
 
 .img-link img {
-    width: 100%;
-    display: block;
     transition: filter 0.4s ease, transform 0.4s ease;
 }
 
@@ -139,4 +105,31 @@ footer {
 
 .img-link:hover::after {
     opacity: 1;
+}
+
+/* footer (스크롤해야 보이게) */
+footer {
+    background-color: #6E5A4A;
+    color: white;
+    text-align: right;
+    font-size: 0.7em;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+    .three-imgs {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 10px 20px;
+        max-height: none; /* 모바일은 자연 스크롤 */
+    }
+
+    .img0,
+    .img1,
+    .img2 {
+        width: 100%;
+    }
 }
