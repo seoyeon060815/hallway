@@ -5,14 +5,17 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.7;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   text-align: center;
+  flex: 0 0 auto;
 }
 
 h1 {
@@ -31,16 +34,20 @@ h1 a {
 }
 
 .on-h {
-  display: none;
+  background-color: #6E5A4A;
+  padding: 20px;
+  margin: 0;
+  color: white;
 }
 
 .three-imgs {
+  flex: 1;
   display: flex;
   gap: 18px;
   padding: 18px;
   max-width: 1200px;
   margin: 0 auto;
-  height: calc(100vh - 110px);
+  width: 100%;
 }
 
 .img0, .img1, .img2 {
@@ -91,12 +98,14 @@ h1 a {
 }
 
 footer {
+  flex: 0 0 auto;
   background-color: #6E5A4A;
   color: white;
   font-size: 0.7em;
   padding: 10px 20px;
   text-align: right;
 }
+
 @media (max-width: 600px) {
   html, body {
     overflow-y: auto;
@@ -132,6 +141,7 @@ footer {
     object-fit: cover;
   }
 }
+
 
 
 
