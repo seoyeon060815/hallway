@@ -22,7 +22,6 @@ h1 {
 .on-img {
     position: relative;
     width: 100%;
-    flex: 1;
     height: 74vh;
     overflow: hidden;
 }
@@ -98,6 +97,7 @@ footer {
         height: 40px;
     }
 }
+
 
 
 
