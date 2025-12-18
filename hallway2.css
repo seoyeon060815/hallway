@@ -44,16 +44,17 @@ h1 a {
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
-  min-height: calc(100vh - 260px);
+  /* 처음 화면에서 사진이 다 보이게 높이 조절 */
+  min-height: calc(100vh - 260px); 
 }
 
-.img0,
-.img1,
-.img2 {
-  width: calc(100% / 3 - 12px);
-  /* text-align: center; 삭제: 왼쪽 정렬이 기본이어야 자식들이 꽉 찹니다 */
+.img0, .img1, .img2 {
+  /* 너비 계산에서 여백을 확실히 제외 */
+  width: calc(33.333% - 12px);
   display: flex;
   flex-direction: column;
+  /* 안쪽 여백이 있으면 라벨과 사진이 따로 노니까 0으로 고정 */
+  padding: 0; 
 }
 
 /* 책 / 영화 / 노래 라벨 */
@@ -61,22 +62,21 @@ h1 a {
   background-color: #4F4339;
   color: white;
   font-size: 1.1em;
-  padding: 6px 0;
-  margin: 0; /* ⭐ 중요: 마진을 0으로 해야 사진 너비와 똑같아집니다 */
-  width: 100%; /* 너비를 꽉 채움 */
-  text-align: center; /* 글자만 가운데로 */
+  padding: 8px 0;
+  margin: 0;         /* 마진을 0으로 해서 박스 끝까지 채움 */
+  width: 100%;       /* 부모 너비 100% 사용 */
+  text-align: center;
+  box-sizing: border-box;
 }
 
-/* 사진 크기 설정 */
-.img0 img,
-.img1 img,
-.img2 img {
-  width: 100%;
-  height: 65vh;
-  object-fit: contain; /* 사진 비율 유지하면서 안 잘리게 함 */
+/* 사진 설정 - 라벨과 너비를 맞추는 핵심 */
+.img0 img, .img1 img, .img2 img {
+  width: 100%;       /* 라벨과 똑같이 부모 너비 100% */
+  height: 65vh;      /* 세로 길이는 유지 */
+  /* ⭐ 핵심: contain 대신 cover를 써야 사진이 좌우 빈틈없이 꽉 찹니다 */
+  object-fit: cover; 
   display: block;
 }
-
 /* ===== Hover Effect ===== */
 
 .img-link {
@@ -137,6 +137,7 @@ footer {
     height: auto;
   }
 }
+
 
 
 
