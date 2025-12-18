@@ -119,23 +119,26 @@ footer {
 
 @media (max-width: 600px) {
   .three-imgs {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column; 
+    gap: 30px;              
+    padding: 20px 15px;
+    min-height: auto;      
   }
 
-  .img0,
-  .img1,
-  .img2 {
+  .img0, .img1, .img2 {
+    width: 100%;            
+    max-width: 100%;
+    flex: none;
+  }
+
+  .img0 img, .img1 img, .img2 img {
+    height: 50vh;          
     width: 100%;
+    object-fit: cover;     
   }
 
-  .img0 img,
-  .img1 img,
-  .img2 img {
-    height: auto;
+  .label {
+    font-size: 1.2em;      
+    padding: 10px 0;
   }
 }
-
-
-
-
