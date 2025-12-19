@@ -101,6 +101,8 @@ footer {
     body {
         overflow: hidden;
         height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
 
     .on-h {
@@ -109,29 +111,34 @@ footer {
     }
 
     main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 0;
     }
 
     .image-wrap {
         width: 100%;
         max-width: none;
-        padding: 0; 
+        padding: 0;
     }
 
     .image-wrap img {
-        height: 68vh;    
-        max-height: 70vh; 
+        width: 100%;
+        aspect-ratio: 9 / 14; 
+        height: auto;
+        max-height: 72vh;
         object-fit: cover;
     }
 
     figcaption {
         font-size: 12px;
-        padding: 5px 10px;
-        line-height: 1.4;
-        background-color: rgba(255, 255, 255, 0.6); 
+        padding: 6px 10px;
+        background-color: rgba(255, 255, 255, 0.7);
     }
 
     footer {
-        padding: 6px 20px;
+        padding: 8px 20px;
     }
 }
