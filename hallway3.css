@@ -121,7 +121,8 @@ footer {
     .image-wrap {
         width: 100%;
         max-width: none;
-        padding: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
     .image-wrap img {
@@ -136,6 +137,8 @@ footer {
         font-size: 12px;
         padding: 6px 10px;
         background-color: rgba(255, 255, 255, 0.7);
+        width: calc(100% - 40px);
+        left: 20px;
     }
 
     footer {
