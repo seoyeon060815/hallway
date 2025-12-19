@@ -37,11 +37,29 @@ h1 a {
   display: flex;
   justify-content: center;
   gap: 18px;
-  padding: 20px 20px 40px;
+  padding: 30px 20px; 
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
   align-items: stretch;
+}
+
+.label {
+  background-color:#2A3136;
+  color: white;
+  font-size: 1.1em;
+  padding: 8px 0;
+  margin: 0; 
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.img0 img, .img1 img, .img2 img {
+  width: 100%;
+  height: calc(100vh - 298px); 
+  object-fit: cover;
+  display: block;
 }
 
 .img0, .img1, .img2 {
@@ -51,28 +69,11 @@ h1 a {
   flex-direction: column;
 }
 
-.label {
-  background-color:#2A3136;
-  color: white;
-  font-size: 1.1em;
-  padding: 8px 0;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .img-link {
   position: relative;
-  display: block;
+  display: flex;          
   overflow: hidden;
-}
-
-.img0 img, .img1 img, .img2 img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
+  height: 100%;
 }
 
 .img-link img {
@@ -106,11 +107,11 @@ footer {
 }
 
 @media (max-width: 600px) {
-
-   .three-imgs {
+  .three-imgs {
     flex-direction: column;
     gap: 24px;
     padding: 24px 20px 40px;
+    height: auto; 
   }
 
   .img0, .img1, .img2 {
@@ -118,8 +119,7 @@ footer {
   }
 
   .img0 img, .img1 img, .img2 img {
-    height: auto;
-    aspect-ratio: 3 / 4;
+    height: 63vh; 
     width: 100%;
     object-fit: cover;
   }
